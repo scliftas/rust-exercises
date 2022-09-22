@@ -56,11 +56,11 @@ mod tests {
 
 fn caesar_cipher<'life>(input: &'life str, shift_key: u32) -> String {
     let shift_chars = |c: char| -> char {
-        let mut ascii_index = c as u32;
-
         if !c.is_alphabetic() {
             return c;
         }
+
+        let mut ascii_index = c as u32;
 
         let shifted_ascii_index = ascii_index - shift_key;
         let overflows_uppercase_alphabet = shifted_ascii_index < 65;
