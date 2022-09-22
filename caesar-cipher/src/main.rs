@@ -64,7 +64,7 @@ fn caesar_cipher<'life>(input: &'life str, shift_key: u32) -> String {
 
         let shifted_ascii_index = ascii_index - shift_key;
         let overflows_uppercase_alphabet = shifted_ascii_index < 65;
-        let overflows_lowercase_alphabet = shifted_ascii_index > 90 && ascii_index - shift_key < 97;
+        let overflows_lowercase_alphabet = shifted_ascii_index > 90 && shifted_ascii_index < 97;
 
         if overflows_uppercase_alphabet || overflows_lowercase_alphabet {
             ascii_index += 26;
